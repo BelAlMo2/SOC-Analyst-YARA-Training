@@ -16,3 +16,15 @@ WannaCry is a notorious ransomware that targets Windows systems. One of its key 
 ### Hunting Command
 ```bash
 vol.py -f compromised_system.raw yarascan -U "vssadmin"
+
+### Findings
+The scan successfully identified the malicious process responsible for the deletion.
+- Malicious Process: @WanaDecryptor@
+- Behavior: Execution of vssadmin.exe Delete Shadows /All /Quiet
+
+### Evidence
+
+![WannaCry Evidence](evidence.jpg)
+
+---
+Status: Completed | Lab: Hack The Box Academy | Tools: Volatility, YARA, Linux
